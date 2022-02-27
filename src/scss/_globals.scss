@@ -1,0 +1,12 @@
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    min-height: 100vh;
+}
+
+[class*="__container"] {
+    max-width: $containerWidth;
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+}
