@@ -1,0 +1,57 @@
+.header {
+    padding: 1.5rem 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 151px;
+        height: 38px;
+    }
+
+}
+
+.menu {
+
+    &__icon {
+        display: none;
+    }
+
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 2.05rem;
+    }
+
+    &__link {
+        color: $black; // .menu__link_button
+        font-weight: 500;
+        line-height: 1.1875;
+        transition: color .2s ease-in;
+
+        &:hover {
+            color: lighten($color: $blue, $amount: 10%);
+        }
+
+        &_button {
+            display: block;
+            padding: 0 1.75rem;
+            line-height: 2.55;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: $white;
+            background-color: $blue;
+            border-radius: 0.625rem;
+            transition: all .2s ease-in;
+
+            &:hover {
+                color: $white;
+                background-color: lighten($color: $blue, $amount: 10%);
+            }
+        }
+    }
+}

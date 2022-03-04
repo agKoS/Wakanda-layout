@@ -1,0 +1,33 @@
+.brands {
+    padding: 72px 0;
+    // .brands__container
+
+    &__container {}
+
+    // .brands__logos
+
+    &__logos {
+        padding: 27px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 69px;
+    }
+
+    // .brands__logo
+
+    &__logo {
+        height: 48px;
+        object-fit: cover;
+        object-position: center center;
+
+        @each $brand,
+        $width in $brandWidth {
+            &_#{$brand}-width {
+                width: $width;
+                flex: 0 0;
+            }
+        }
+    }
+}
