@@ -56,24 +56,57 @@
 
     // .benefits__items
 
-    &__items {}
-
-    // .benefits__item
-
-    &__item {}
+    &__items {
+        display: flex;
+        gap: 24px;
+    }
 }
 
 .benefit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 356px;
 
-    // .benefit__pic
+    // .benefit__icon-container
 
-    &__pic {}
+    &__icon-container {
+        display: grid;
+        width: 108px;
+        height: 108px;
+        background-color: $lightBlue;
+        border-radius: 50%;
+        margin-bottom: 46px;
+    }
+
+    // .benefit__icon
+
+    &__icon {
+        justify-self: center;
+        align-self: center;
+        width: 42px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center center;
+    }
 
     // .benefit__title
 
-    &__title {}
+    &__title {
+        font: {
+            size: 1.5rem;
+            weight: 700;
+        }
+
+        margin-bottom: 16px;
+        color: $grayTitleText;
+
+    }
 
     // .benefit__text
 
-    &__text {}
+    &__text {
+        color: $white;
+        line-height: 1.5;
+    }
 }
