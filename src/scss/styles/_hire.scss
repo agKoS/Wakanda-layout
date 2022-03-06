@@ -1,0 +1,51 @@
+.hire-talent {
+    background-color: $lightBlue;
+    // padding-top: 31px;
+    // .hire-talent__container
+
+    &__container {
+        display: flex;
+        gap: 46px;
+    }
+
+    // .hire-talent__content
+
+    &__content {
+        align-self: center;
+        max-width: 473px;
+    }
+
+    // .hire-talent__title
+
+    &__title {
+        margin-bottom: 14px;
+    }
+
+
+    // .hire-talent__text
+
+    &__text {
+        max-width: 450px;
+        line-height: 1.5;
+        margin-bottom: 28px;
+    }
+
+    // .hire-talent__button
+
+    &__button {}
+
+    // .hire-talent__image-container
+
+    &__image-container {
+
+        padding-top: 31px;
+    }
+
+    // .hire-talent__image
+
+    &__image {
+        width: 100%;
+        max-width: 596px;
+        height: auto;
+    }
+}
