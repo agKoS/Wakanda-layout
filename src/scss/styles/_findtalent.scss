@@ -1,0 +1,73 @@
+.find-talent {
+    padding: {
+        top: 69px;
+        bottom: 73px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: minmax(0, 451px) 1fr;
+        grid-template-areas: "image list";
+        column-gap: 119px;
+    }
+
+    // .find-talent__image-wrapper
+
+    &__image-wrapper {}
+
+    // .find-talent__image
+
+    &__image {}
+
+    // .find-talent__steps
+
+    &__steps {}
+}
+
+.steps {
+    padding-top: 79px; // .steps__title
+
+    &__title {
+
+        font: {
+            size: 3rem;
+            weight: bold;
+        }
+
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+        margin-bottom: 33px;
+    }
+
+    // .steps__list
+
+    &__list {
+        counter-reset: $steps;
+    }
+
+    // .steps__item
+
+    &__item {
+        margin-bottom: 16px;
+        line-height: 1.1875;
+        font-weight: 400;
+
+        &:nth-last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            font-weight: 600;
+            counter-increment: $steps;
+            content: counter($steps);
+            display: inline-block;
+            width: 32px;
+            margin-right: 1rem;
+            background-color: $lightBlue;
+            border-radius: 50%;
+            color: $black;
+            text-align: center;
+            line-height: 2rem;
+        }
+    }
+}
