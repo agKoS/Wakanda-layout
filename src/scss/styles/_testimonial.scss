@@ -1,10 +1,6 @@
 .testimonial {
     background-color: $grayTitleText;
-
-    padding: {
-        top: 87px;
-        bottom: 112px;
-    }
+    padding: 87px 0;
 
     // .testimonial__container
 
@@ -67,31 +63,39 @@
     // .testimonial__comment
 
     &__comment {}
-}
 
-.benefits {
-
-    // .benefits__container
-
-    &__container {}
 }
 
 .comment {
-
+    background-color: $white;
+    padding: 20px;
+    width: 356px;
+    margin-bottom: 24px;
     // .comment__user
 
-    &__user {}
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
 
     // .comment__text
 
-    &__text {}
+    &__text {
+        line-height: 1.75;
+    }
 }
 
 .user {
 
     // .user__photo
 
-    &__photo {}
+    &__photo {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
 
     // .user__info
 
@@ -99,9 +103,14 @@
 
     // .user__name
 
-    &__name {}
+    &__name {
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
 
     // .user__rating
 
-    &__rating {}
+    &__rating {
+        height: 16px;
+    }
 }
