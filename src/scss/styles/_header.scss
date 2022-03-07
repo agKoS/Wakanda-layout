@@ -1,3 +1,27 @@
+@mixin button($textColor, $bgColor, $blueButton) {
+    display: inline-block;
+    padding: 0 1.75rem;
+    line-height: 2.55;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $textColor;
+    background-color: $bgColor;
+    border-radius: 0.625rem;
+    transition: all .1s ease-in;
+
+    &:hover {
+        color: $textColor;
+
+        @if $blueButton {
+            background-color: lighten($color: $bgColor, $amount: 10%);
+        }
+
+        @else {
+            background-color: darken($color: $bgColor, $amount: 10%);
+        }
+    }
+}
+
 .header {
     padding: 1.5rem 0;
 
@@ -38,20 +62,11 @@
         }
 
         &_button {
-            display: inline-block;
-            padding: 0 1.75rem;
-            line-height: 2.55;
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: $white;
-            background-color: $blue;
-            border-radius: 0.625rem;
-            transition: all .2s ease-in;
+            @include button($white, $blue, true)
+        }
 
-            &:hover {
-                color: $white;
-                background-color: lighten($color: $blue, $amount: 10%);
-            }
+        &_button-white {
+            @include button($blue, $white, false)
         }
     }
 }
