@@ -1,0 +1,107 @@
+.testimonial {
+    background-color: $grayTitleText;
+
+    padding: {
+        top: 87px;
+        bottom: 112px;
+    }
+
+    // .testimonial__container
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .testimonial__title-wrapper
+
+    &__title-wrapper {
+        margin-bottom: 48px;
+    }
+
+    // .testimonial__title
+
+    &__title {
+        position: relative;
+        max-width: 541px;
+
+        font: {
+            size: 3rem;
+            weight: 700;
+        }
+
+        letter-spacing: -0.5px;
+        line-height: 1.25;
+        text-align: center;
+        color: $black;
+        // .testimonial__title_text
+
+        &_text {
+            padding-top: 35px;
+
+            &::before {
+                content: attr(data-text);
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                font: {
+                    size: 1rem;
+                    weight: 600;
+                }
+
+                color: $blue;
+                line-height: 1.1875;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    // .testimonial__comments
+
+    &__comments {}
+
+    // .testimonial__comment
+
+    &__comment {}
+}
+
+.benefits {
+
+    // .benefits__container
+
+    &__container {}
+}
+
+.comment {
+
+    // .comment__user
+
+    &__user {}
+
+    // .comment__text
+
+    &__text {}
+}
+
+.user {
+
+    // .user__photo
+
+    &__photo {}
+
+    // .user__info
+
+    &__info {}
+
+    // .user__name
+
+    &__name {}
+
+    // .user__rating
+
+    &__rating {}
+}
