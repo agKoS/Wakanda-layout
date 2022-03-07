@@ -43,6 +43,8 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2",
     "webp-converter": "^2.2.3"
   }
 }
