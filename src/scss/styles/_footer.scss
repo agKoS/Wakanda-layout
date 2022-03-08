@@ -46,15 +46,40 @@
 
     &__socials {
         grid-area: socials;
+        padding-left: 3px;
+        display: flex;
+        gap: 16px;
     }
 
     // .footer__social-link
 
-    &__social-link {}
+    &__social-link {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $grayFooterIcon;
+    }
 
     // .footer__social
 
-    &__social {}
+    &__social {
+        align-self: center;
+        justify-self: center;
+        width: 18px;
+        height: 18px;
+        object-fit: cover;
+        object-position: center;
+
+        &_twitter {
+            width: 16px;
+            height: 14px;
+        }
+
+        &_youtube {
+            height: 13px;
+        }
+    }
 
     // .footer__copyright
 
