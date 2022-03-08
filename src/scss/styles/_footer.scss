@@ -85,6 +85,10 @@
 
     &__copyright {
         grid-area: copyright;
+        color: $grayFooter;
+        font-size: 0.875rem;
+        line-height: 1.714;
+        text-indent: 3px;
     }
 
     // .footer__nav
