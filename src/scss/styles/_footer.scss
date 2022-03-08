@@ -1,5 +1,6 @@
 .footer {
     background-color: $blackFooter;
+    color: $grayFooter;
     // .footer__wrapper
 
     &__wrapper {
@@ -12,7 +13,7 @@
         display: grid;
 
         grid-template: {
-            columns: minmax(300, 1fr) minmax(300px, 350px) 255px;
+            columns: 1fr minmax(300px, 350px) 255px;
             rows: 29px 32px 1fr;
             areas:
                 "logo nav subscribe"
@@ -59,6 +60,12 @@
         height: 32px;
         border-radius: 50%;
         background-color: $grayFooterIcon;
+        transition: background-color 0.2s ease-in;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        &:hover {
+            background-color: lighten($color: $grayFooterIcon, $amount: 10%);
+        }
     }
 
     // .footer__social
@@ -85,7 +92,6 @@
 
     &__copyright {
         grid-area: copyright;
-        color: $grayFooter;
         font-size: 0.875rem;
         line-height: 1.714;
         text-indent: 3px;
@@ -95,28 +101,75 @@
 
     &__nav {
         grid-area: nav;
+        display: flex;
+        gap: 30px;
     }
 
     // .footer__menu
 
-    &__menu {}
+    &__menu {
+        padding-top: 4px;
+        flex: 1 1 160px;
+    }
 
     // .footer__item
 
-    &__item {}
+    &__item {
+
+        &:not(:first-child) {
+            margin-top: 12px;
+        }
+    }
 
     // .footer__menu-header
 
-    &__menu-header {}
+    &__menu-header {
+        font: {
+            size: 20px;
+            weight: 700;
+        }
+
+        color: $white;
+        margin-bottom: 27px;
+    }
 
     // .footer__link
 
-    &__link {}
+    &__link {
+        position: relative;
+        color: inherit;
+        line-height: 1.625;
+        transition: color 0.2s ease-in;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            bottom: 8px;
+            left: 0;
+            opacity: 0;
+            transition: all 0.2s ease-in;
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: $white;
+
+            &::after {
+                opacity: 1;
+                bottom: -8px;
+            }
+        }
+
+    }
 
     // .footer__subscribe
 
     &__subscribe {
         grid-area: subscribe;
+
     }
 }
 
