@@ -36,7 +36,11 @@
 
     // .footer__logo
 
-    &__logo {}
+    &__logo {
+        width: 154px;
+        height: 29px;
+        object-fit: cover;
+    }
 
     // .footer__socials
 
