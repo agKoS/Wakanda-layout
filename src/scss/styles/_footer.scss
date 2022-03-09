@@ -169,7 +169,7 @@
 
     &__subscribe {
         grid-area: subscribe;
-
+        padding-top: 4px;
     }
 }
 
@@ -181,13 +181,48 @@
 
     // .subscribe__form
 
-    &__form {}
+    &__form {
+        position: relative;
+    }
 
     // .subscribe__email
 
-    &__email {}
+    &__email {
+        width: 255px;
+        border-radius: 8px;
+        padding: 9px 34px 6px 12px;
+        margin-left: -2px;
+        color: $grayFooter;
+        font-size: 14px;
+        line-height: 1.7;
+        background-color: $grayFooterEmail;
+
+        &::placeholder {
+            color: $grayFooter;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    }
 
     // .subscribe__button
 
-    &__button {}
+    &__button {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        height: 40px;
+        width: 40px;
+        top: 0px;
+        right: 0px;
+
+        // .subscribe__button-image 
+        &-image {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+
 }

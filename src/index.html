@@ -591,7 +591,7 @@
                         </ul>
                     </div>
                     <div class="footer__subscribe subscribe">
-                        <h3 class="subscribe__title">
+                        <h3 class="subscribe__title footer__menu-header">
                             Subscribe to our newsletter
                         </h3>
                         <form action="#" class="subscribe__form">
@@ -601,10 +601,13 @@
                                 name="subscribe"
                                 placeholder="Your email address"
                             />
-                            <button class="subscribe__button">
+                            <button
+                                class="subscribe__button"
+                                onclick="return false"
+                            >
                                 <img
                                     src="./img/icons.svg#send"
-                                    class="footer__social"
+                                    class="subscribe__button-image"
                                 />
                             </button>
                         </form>
