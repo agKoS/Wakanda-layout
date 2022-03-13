@@ -18,7 +18,8 @@ buttonMenu.addEventListener("click", activeMenu)
 
 imagesLoaded(comments, function (instance) {
     new masonry(comments, {
-        columnWidth: 356,
+        // columnWidth: 356,
+        columnWidth: ".comment",
         itemSelector: ".comment",
         horizontalOrder: true,
         fitWidth: true,

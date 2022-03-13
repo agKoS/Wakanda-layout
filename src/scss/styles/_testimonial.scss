@@ -2,6 +2,10 @@
     background-color: $grayTitleText;
     padding: 87px 0;
 
+    @media (max-width: $breakpoint820) {
+        padding: 30px 0;
+    }
+
     // .testimonial__container
 
     &__container {
@@ -31,6 +35,11 @@
         line-height: 1.25;
         text-align: center;
         color: $black;
+
+        @media (max-width: $breakpoint480) {
+            font-size: 2.4rem;
+        }
+
         // .testimonial__title_text
 
         &_text {
@@ -55,15 +64,6 @@
             }
         }
     }
-
-    // .testimonial__comments
-
-    &__comments {}
-
-    // .testimonial__comment
-
-    &__comment {}
-
 }
 
 .comment {
@@ -71,6 +71,11 @@
     padding: 20px;
     width: 356px;
     margin-bottom: 24px;
+
+    @media (max-width: $breakpoint480) {
+        width: 320px;
+    }
+
     // .comment__user
 
     &__user {
@@ -96,10 +101,6 @@
         height: 48px;
         border-radius: 50%;
     }
-
-    // .user__info
-
-    &__info {}
 
     // .user__name
 
