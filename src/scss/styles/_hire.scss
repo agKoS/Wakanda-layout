@@ -1,11 +1,21 @@
 .hire-talent {
     background-color: $lightBlue;
-    // padding-top: 31px;
-    // .hire-talent__container
 
     &__container {
         display: flex;
         gap: 46px;
+
+        @media (max-width: $breakpoint900) {
+            padding: {
+                top: 31px;
+                bottom: 31px;
+            }
+        }
+
+        @media (max-width: $breakpoint820) {
+            justify-content: center;
+            text-align: center;
+        }
     }
 
     // .hire-talent__content
@@ -13,6 +23,9 @@
     &__content {
         align-self: center;
         max-width: 473px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     // .hire-talent__title
@@ -30,15 +43,19 @@
         margin-bottom: 28px;
     }
 
-    // .hire-talent__button
-
-    &__button {}
-
     // .hire-talent__image-container
 
     &__image-container {
 
         padding-top: 31px;
+
+        @media (max-width: $breakpoint900) {
+            padding-top: 0;
+        }
+
+        @media (max-width: $breakpoint820) {
+            display: none;
+        }
     }
 
     // .hire-talent__image
