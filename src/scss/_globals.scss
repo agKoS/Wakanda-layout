@@ -1,7 +1,7 @@
 html {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -9,9 +9,13 @@ body {
     font-weight: normal;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     font-size: 1rem;
     min-height: 100vh;
+}
+
+body.active {
+    overflow: hidden;
 }
 
 [class*="__container"] {

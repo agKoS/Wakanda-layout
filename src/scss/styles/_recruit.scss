@@ -7,6 +7,11 @@
         grid-template-columns: minmax(300px, 1fr) 580px;
         grid-template-areas: "content image";
         margin-top: 43px;
+
+        @media (max-width: $breakpoint900) {
+            grid-template-columns: 300px 1fr;
+            margin-top: 10px;
+        }
     }
 
     // .recruit__content
@@ -17,6 +22,10 @@
         flex-direction: column;
         align-items: flex-start;
         margin-top: 101px;
+
+        @media (max-width: $breakpoint900) {
+            margin-top: 0px;
+        }
     }
 
     // .recruit__header
@@ -50,6 +59,12 @@
             height: 677px;
             object-fit: cover;
             object-position: -48px 0;
+
+            @media (max-width: $breakpoint900) {
+                height: auto;
+                object-position: 0 0;
+            }
+
         }
     }
 }
