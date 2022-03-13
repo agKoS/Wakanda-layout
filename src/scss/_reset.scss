@@ -9,7 +9,6 @@
 
 a {
     text-decoration: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a:focus,
@@ -53,6 +52,11 @@ button,
 select {
     font-family: inherit;
     font-size: inherit;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 button,

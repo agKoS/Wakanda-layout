@@ -23,16 +23,122 @@
     }
 }
 
+// Mixin for menu button animation
+
+@mixin active($time, $reverse: false) {
+
+    @if $reverse {
+        animation: middleLineReverse $time forwards;
+
+        &::before {
+            animation: topLineReverse $time forwards;
+        }
+
+        &::after {
+            animation: bottomLineReverse $time forwards;
+        }
+    }
+
+    @else {
+        animation: middleLine $time forwards;
+
+        &::before {
+            animation: topLine $time forwards;
+        }
+
+        &::after {
+            animation: bottomLine $time forwards;
+        }
+    }
+
+}
+
+// Keyframes for burger menu
+
+@keyframes middleLine {
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes middleLineReverse {
+    50% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes topLine {
+    50% {
+        top: 0;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes topLineReverse {
+    50% {
+        top: 0;
+    }
+
+    to {
+        top: -6px;
+    }
+}
+
+@keyframes bottomLine {
+    50% {
+        bottom: 0;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        bottom: 0;
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes bottomLineReverse {
+    50% {
+        bottom: 0;
+        transform: rotate(0deg);
+    }
+
+    to {
+        bottom: -6px;
+        transform: rotate(0deg);
+    }
+}
+
+// Styles
+
 .header {
     padding: 1.5rem 0;
+    position: relative;
+
+    @media (max-width: $breakpoint820) {
+        padding: 0.5rem 0;
+    }
+
+    // .header__container
 
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        @media (max-width: $breakpoint820) {}
     }
+
+    // .header__logo
 
     &__logo {
         width: 151px;
@@ -43,48 +149,79 @@
 
 .menu {
 
+    // .menu__icon
+
     &__icon {
         display: none;
 
         @media (max-width: $breakpoint820) {
             display: inline-block;
-            width: 25px;
-            height: 25px;
+            width: 18px;
+            height: 18px;
             position: relative;
+        }
+    }
 
-            & span,
-            & span::before,
-            & span::after {
-                position: absolute;
-                width: 100%;
-                height: 3px;
-                background-color: $black;
+    // .menu__line
+
+    &__line {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: inline-block;
+
+        &,
+        &::before,
+        &::after {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $black;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            left: 0;
+        }
+
+        &::before {
+            top: -6px;
+        }
+
+        &::after {
+            bottom: -6px;
+        }
+
+        // .active .menu__line
+
+        .active & {
+            @include active(0.7s);
+        }
+
+        // .menu__line_active
+
+        &_active {
+            transform: rotate(45deg);
+
+            &::before {
+                top: 0;
             }
 
-            & span {
-                top: 50%;
-                left: -25%;
-                transform: translateY(-50%);
-                display: inline-block;
+            &::after {
+                bottom: 0;
+                transform: rotate(-90deg);
+            }
 
-                &::after,
-                &::before {
-                    content: "";
-                    left: 0;
-                }
+            // .not-active .menu__line_active
 
-                &::before {
-                    top: -9px;
-                }
-
-                &::after {
-                    bottom: -9px;
-                }
-
+            .not-active & {
+                @include active(0.7s, true)
             }
         }
     }
 
+    // .menu__list
 
     &__list {
         display: flex;
@@ -95,6 +232,8 @@
             display: none;
         }
     }
+
+    // .menu__link
 
     &__link {
         color: $black;
