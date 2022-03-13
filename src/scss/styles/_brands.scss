@@ -1,8 +1,9 @@
 .brands {
     padding: 72px 0;
-    // .brands__container
 
-    &__container {}
+    @media (max-width: $breakpoint900) {
+        padding: 16px 0;
+    }
 
     // .brands__logos
 
@@ -13,6 +14,12 @@
         justify-content: center;
         align-items: center;
         gap: 69px;
+
+        @media (max-width: $breakpoint820) {
+            margin: 0 auto;
+            max-width: 600px;
+            gap: 30px;
+        }
     }
 
     // .brands__logo
@@ -27,6 +34,17 @@
             &_#{$brand}-width {
                 width: $width;
                 flex: 0 0;
+            }
+        }
+
+        @media (max-width: $breakpoint820) {
+
+            @each $brand,
+            $width in $brandWidth {
+                &_#{$brand}-width {
+                    width: calc($width * 0.8);
+                    height: calc(48px * 0.8);
+                }
             }
         }
     }
