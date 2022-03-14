@@ -1,10 +1,20 @@
 .footer {
     background-color: $blackFooter;
     color: $grayFooter;
+
     // .footer__wrapper
 
     &__wrapper {
         padding: 64px 0;
+
+        @media (max-width: $breakpoint974) {
+            padding: 30px 0;
+        }
+
+        @media (max-width: $breakpoint648) {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     // .footer__container
@@ -23,17 +33,52 @@
 
         column-gap: 30px;
         row-gap: 40px;
+
+        @media (max-width: $breakpoint974) {
+            grid-template: {
+                rows: 29px 32px 1fr 24px;
+                areas:
+                    "logo nav subscribe"
+                    "socials nav subscribe"
+                    "... nav subscribe"
+                    "copyright copyright copyright";
+            }
+        }
+
+        @media (max-width: $breakpoint820) {
+            grid-template: {
+                columns: 255px 1fr minmax(300px, 350px);
+                areas:
+                    "logo ... nav"
+                    "socials ... nav"
+                    "subscribe ... nav"
+                    "copyright copyright copyright";
+            }
+        }
+
+        @media (max-width: $breakpoint648) {
+            grid-template: {
+                columns: minmax(300px, 320px);
+                rows: 29px 94px 232px 32px 24px;
+                areas:
+                    "logo"
+                    "subscribe"
+                    "nav"
+                    "socials"
+                    "copyright";
+            }
+        }
     }
 
     // .footer__logo-container
 
     &__logo-container {
         grid-area: logo;
+
+        @media (max-width: $breakpoint648) {
+            justify-self: center;
+        }
     }
-
-    // .footer__logo-link
-
-    &__logo-link {}
 
     // .footer__logo
 
@@ -50,18 +95,22 @@
         padding-left: 3px;
         display: flex;
         gap: 16px;
+
+        @media (max-width: $breakpoint648) {
+            justify-self: center;
+        }
     }
 
     // .footer__social-link
 
     &__social-link {
         display: grid;
+        place-items: center;
         width: 32px;
         height: 32px;
         border-radius: 50%;
         background-color: $grayFooterIcon;
         transition: background-color 0.2s ease-in;
-        // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
         &:hover {
             background-color: lighten($color: $grayFooterIcon, $amount: 10%);
@@ -71,8 +120,6 @@
     // .footer__social
 
     &__social {
-        align-self: center;
-        justify-self: center;
         width: 18px;
         height: 18px;
         object-fit: cover;
@@ -95,6 +142,10 @@
         font-size: 0.875rem;
         line-height: 1.714;
         text-indent: 3px;
+
+        @media (max-width: $breakpoint974) {
+            text-align: center;
+        }
     }
 
     // .footer__nav
@@ -103,6 +154,11 @@
         grid-area: nav;
         display: flex;
         gap: 30px;
+
+        @media (max-width: $breakpoint648) {
+            justify-content: space-between;
+            gap: 0;
+        }
     }
 
     // .footer__menu
@@ -110,6 +166,11 @@
     &__menu {
         padding-top: 4px;
         flex: 1 1 160px;
+
+        @media (max-width: $breakpoint648) {
+            flex: 0 0 auto;
+            width: 120px;
+        }
     }
 
     // .footer__item
@@ -162,7 +223,6 @@
                 bottom: -8px;
             }
         }
-
     }
 
     // .footer__subscribe
@@ -170,14 +230,14 @@
     &__subscribe {
         grid-area: subscribe;
         padding-top: 4px;
+
+        @media (max-width: $breakpoint648) {
+            justify-self: center;
+        }
     }
 }
 
 .subscribe {
-
-    // .subscribe__title
-
-    &__title {}
 
     // .subscribe__form
 
@@ -223,6 +283,4 @@
             object-position: center;
         }
     }
-
-
 }
